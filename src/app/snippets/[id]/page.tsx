@@ -1,6 +1,7 @@
 import React from 'react';
 import { db } from '@/db';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
 interface SnippetShowPageProps {
   params: {
@@ -24,7 +25,12 @@ const ViewSnippetPage = async (props: SnippetShowPageProps) => {
       <div className="flex justify-between items-center m-4">
         <h1 className="text-xl font-bold">{snippet.title}</h1>
         <div className="flex gap-2">
-          <button className="p-2 border rounded">Edit</button>
+          <Link
+            href={`/snippets/${snippet.id}/edit`}
+            className="p-2 border rounded"
+          >
+            Edit
+          </Link>
           <button className="p-2 border rounded">Delete</button>
         </div>
       </div>
