@@ -2,6 +2,7 @@ import React from 'react';
 import { db } from '@/db';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import * as actions from '@/actions';
 
 interface SnippetShowPageProps {
   params: {
@@ -20,6 +21,8 @@ const ViewSnippetPage = async (props: SnippetShowPageProps) => {
     return notFound();
   }
 
+  const deleteSnippetAction = actions.deleteSnippet.bind(null, snippet.id);
+
   return (
     <div>
       <div className="flex justify-between items-center m-4">
@@ -31,7 +34,9 @@ const ViewSnippetPage = async (props: SnippetShowPageProps) => {
           >
             Edit
           </Link>
-          <button className="p-2 border rounded">Delete</button>
+          <form action={deleteSnippetAction}>
+            <button className="p-2 border rounded">Delete</button>
+          </form>
         </div>
       </div>
       <pre className="p-3 border rounded bg-gray-200 border-gray-200">
