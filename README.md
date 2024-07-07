@@ -4,6 +4,8 @@ Save your reusable code snippets!
 
 > This project is part of [NextJS: The Complete Developer's Guide](https://www.udemy.com/course/next-js-the-complete-developers-guide/).
 
+<img src="./docs/snippy.gif" alt="Snippy Demo" width="80%" />
+
 ## Getting Started
 
 First, install all dependencies:
