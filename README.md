@@ -20,6 +20,12 @@ Next, create a config file:
 cp .env.example .env
 ```
 
+Now, run migrations to sync local DB
+
+```bash
+npx prisma migrate dev
+```
+
 Then, run the development server:
 
 ```bash
