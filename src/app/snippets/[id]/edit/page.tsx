@@ -9,7 +9,7 @@ interface SnippetEditPageProps {
   };
 }
 
-export const EditSnippetPage = async (props: SnippetEditPageProps) => {
+const EditSnippetPage = async (props: SnippetEditPageProps) => {
   const id = parseInt(props.params.id);
   const snippet = await db.snippet.findFirst({
     where: { id },
